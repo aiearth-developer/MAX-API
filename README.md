@@ -1,10 +1,8 @@
 ## MAX API部署教程：
 
-#### 演示站：
+#### 演示站：[maxapi.aiearth.dev](https://maxapi.aiearth.dev])
 
-<div style="position: relative; padding: 30% 45%;">
-<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://maxapi.aiearth.dev" frameborder="1" scrolling="yes" width="320" height="240"</iframe>
-</div>
+![image](https://github.com/user-attachments/assets/e3190252-39f8-415f-b1b2-7bf64a04ab0f)
 
 ```
 docker镜像地址：registry.cn-hangzhou.aliyuncs.com/pochacco/max-api:latest
