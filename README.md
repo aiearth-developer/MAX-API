@@ -1,6 +1,6 @@
 ## MAX API部署教程：
 
-#### 演示站：(maxapi.aiearth.dev)[https://maxapi.aiearth.dev]
+#### 演示站：[maxapi.aiearth.dev](https://maxapi.aiearth.dev)
 
 ![image](https://github.com/user-attachments/assets/e3190252-39f8-415f-b1b2-7bf64a04ab0f)
 
