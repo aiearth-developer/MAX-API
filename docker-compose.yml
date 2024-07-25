@@ -1,0 +1,49 @@
+version: '3.4'
+
+services:
+  max-api1:
+    image: pochacco/max-api:latest
+    container_name: Max-API
+    restart: always
+    command: --log-dir /app/logs
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/data
+      - ./logs:/app/logs
+    environment:
+      - SQL_DSN=root:123456@tcp(host.docker.internal:3306)/max-api  # 修改此行，或注释掉以使用 SQLite 作为数据库
+      - REDIS_CONN_STRING=redis://redis:6379
+      - SESSION_SECRET=max-api  #请修改为随机字符
+      - TZ=Asia/Shanghai
+      - SYNC_FREQUENCY=60
+      - MEMORY_CACHE_ENABLED=true
+      - SQL_MAX_IDLE_CONNS=1000
+      - SQL_MAX_OPEN_CONNS=8000
+      - SQL_CONN_MAX_LIFETIME=60
+      - CHANNEL_UPDATE_FREQUENCY=60
+      - CHANNEL_TEST_FREQUENCY=60
+      - BATCH_UPDATE_ENABLED=true
+      - BATCH_UPDATE_INTERVAL=60
+      - GLOBAL_API_RATE_LIMIT=200000
+      - GLOBAL_WEB_RATE_LIMIT=200000
+      - RELAY_TIMEOUT=1000
+      - AUTH_CODE=授权码
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    volumes:
+      - ./redis-data:/data
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: always
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_POLL_INTERVAL=43200  # 12小时（43200秒）
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
