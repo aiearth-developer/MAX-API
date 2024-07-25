@@ -1,6 +1,6 @@
 ## MAX API部署教程：
 
-#### 演示站：[maxapi.aiearth.dev](https://maxapi.aiearth.dev])
+#### 演示站：[maxapi.aiearth.dev][https://maxapi.aiearth.dev]
 
 ![image](https://github.com/user-attachments/assets/e3190252-39f8-415f-b1b2-7bf64a04ab0f)
 
@@ -8,11 +8,16 @@
 docker镜像地址：registry.cn-hangzhou.aliyuncs.com/pochacco/max-api:latest
 ```
 
-部署方式：仅支持采用docker-compose.yml文件进行部署
+**部署方式：仅支持采用docker-compose.yml文件进行部署**
 
-系统免费授权：加入QQ群，联系运营管理员免费获取授权码！
+**系统免费授权：加入QQ群，联系运营管理员免费获取授权码！**
 
-docker-compose.yml文件代码：
+<figure class="half">     
+    <img src="https://github.com/user-attachments/assets/340591ba-a94b-4059-a0e9-05c7fb68a7fa" width="200">     
+    <img src="https://github.com/user-attachments/assets/8b46f489-118f-4a9d-a237-cd1d3a0c4827" width="200"> 
+</figure>
+
+**docker-compose.yml文件代码：**
 
 ```
 version: '3.4'
@@ -66,14 +71,15 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 ```
 
-部署教程：
+**部署步骤：**
 
+```
 新建docker-compose.yml文件将docker-compose.yml文件代码粘贴进去保存
-
-系统免费授权：加入QQ群，联系运营管理员免费获取授权码！
 
 修改数据库信息，并填入授权码
 
 启动项目：在docker-compose.yml文件目录，打开终端输入：docker-compose up -d 即可启动项目
 
 注意：由于增加ip限制功能和速率限制功能需要使用redis
+```
+
