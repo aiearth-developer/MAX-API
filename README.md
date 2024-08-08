@@ -22,7 +22,7 @@ docker镜像地址：registry.cn-hangzhou.aliyuncs.com/pochacco/max-api:latest
 **docker-compose.yml文件代码：**
 
 ```
-version: '1.0.1'
+version: '1.0.2'
 
 services:
   max-api1:
